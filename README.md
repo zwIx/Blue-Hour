@@ -5,13 +5,21 @@ A Persona 3 Reload–inspired local music player for Apple silicon Macs.
 ![Blue Hour main screen](screenshots/player.png)
 
 - Browse tracks, albums, artists, and favorites.
-- Build a queue, play albums gaplessly, and control playback from the background notch.
+- Build a queue, and play albums gaplessly.
 - Import local files or queue downloads from supported music links.
 
 ## Screenshots
 
 ![Blue Hour library](screenshots/library.png)
-![Blue Hour background player](screenshots/notch.png)
+## Background notch
+
+When Blue Hour is in the background, a compact notch sits at the top center of the screen. Hover over it to see album art, track details, and previous, play/pause, and next controls. Pausing shrinks it to a small centered tab. Hover over the tab to resume.
+
+Choose one screen or **All displays** under **Settings → General → Background player display**.
+
+![Collapsed and expanded Blue Hour notch in the macOS menu bar](screenshots/notch-in-context.png)
+
+*Captures from the running app, placed in a menu-bar illustration to show their position.*
 
 ## Build
 
