@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' bluehour:">
+<title>Blue Hour background player</title>
+<link rel="stylesheet" href="notch.css">
+</head>
+<body>
+<main>
+  <svg class="silhouette" viewBox="0 0 460 99" aria-hidden="true">
+    <defs><linearGradient id="blue-shell" x2="0" y2="1">
+      <stop stop-color="#06388b"/>
+      <stop offset="1" stop-color="#07398c"/>
+    </linearGradient></defs>
+    <path class="shell" fill="url(#blue-shell)"/>
+  </svg>
+  <div class="meter" aria-label="Blue Hour"><i></i><i></i><i></i></div>
+  <div class="details" inert>
+    <div class="track">
+      <img class="artwork" src="assets/icon.png" alt="">
+      <span class="metadata"><strong></strong><small></small></span>
+    </div>
+    <div class="transport">
+      <button data-control="prev" aria-label="Previous track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5 12 12l10 7ZM12 5 2 12l10 7Z"/></svg></button>
+      <button data-control="play" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="play-icon" d="m7 4 14 8-14 8Z"/></svg></button>
+      <button data-control="next" aria-label="Next track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 5 10 7L2 19Zm10 0 10 7-10 7Z"/></svg></button>
+    </div>
+  </div>
+</main>
+<script src="notch.js"></script>
+</body>
+</html>

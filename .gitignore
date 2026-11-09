@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+dist/
+runtime/bin/
+runtime/managed/
+runtime/packages/
+__pycache__/
+tests/*.png
+*.dmg
+.env
+.env.*

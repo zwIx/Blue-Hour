@@ -1,0 +1,67 @@
+/* Keep the approved composition at 16:9, adapting spacing to the live window. */
+#zwlx-clean-loop{width:100vw!important;height:100vh;--u:min(1cqw,calc((100vh - 37px)/56.25))}
+#zwlx-clean-loop .scene{height:calc(100vh - 37px)!important;aspect-ratio:auto!important;min-height:0!important}
+#zwlx-clean-loop .plate{inset:0;width:100%!important;height:100%!important;object-fit:cover!important;object-position:35% bottom}
+#zwlx-clean-loop .main-choice{font-size:calc(5*var(--u));letter-spacing:calc(-.22*var(--u));margin-bottom:var(--u)}
+#zwlx-clean-loop .scene[data-view=main] .song-title{font-size:calc(3.8*var(--u))}
+#zwlx-clean-loop .scene[data-view=main] .now-label{font-size:max(9px,calc(1.05*var(--u)));letter-spacing:calc(.18*var(--u))}
+#zwlx-clean-loop .scene[data-view=main] .artist{font-size:max(11px,calc(1.22*var(--u)))}
+#zwlx-clean-loop .scene[data-view=main] .player-body{margin-top:calc(1.4*var(--u))}
+#zwlx-clean-loop .scene[data-view=main] .controls{gap:calc(2.2*var(--u));margin-top:calc(2*var(--u))}
+#zwlx-clean-loop .scene[data-view=main] .controls svg{width:max(15px,calc(1.65*var(--u)));height:max(15px,calc(1.65*var(--u)))}
+#zwlx-clean-loop .scene[data-view=main] .controls .play svg{width:max(22px,calc(2.6*var(--u)));height:max(22px,calc(2.6*var(--u)))}
+#zwlx-clean-loop .scene[data-view=main] .timeline{margin-top:calc(1.6*var(--u));font-size:max(10px,calc(1.05*var(--u)))}
+#zwlx-clean-loop .scene[data-view=main] .volume-row{margin-top:calc(1.25*var(--u))}
+#zwlx-clean-loop .volume-row svg{width:max(12px,calc(1.2*var(--u)));height:max(12px,calc(1.2*var(--u)))}
+#zwlx-clean-loop #zf-settings{bottom:4%;display:flex;flex-direction:column;min-height:0}
+#zwlx-clean-loop .panels{min-height:0;flex:1;max-height:none}
+#zwlx-clean-loop .heading,#zwlx-clean-loop .tabs{flex-shrink:0}
+#zwlx-clean-loop h1{font-size:clamp(40px,calc(6.1*var(--u)),65px)}
+#zwlx-clean-loop .scene[data-view=downloads] h1{font-size:clamp(38px,calc(4.8*var(--u)),65px)}
+#zwlx-clean-loop .collection{font-size:clamp(9px,1.05cqw,14px)}
+@media(max-width:900px){
+ #zwlx-clean-loop .plate{object-position:8% bottom}
+ #zwlx-clean-loop .scene:after{display:block;background:linear-gradient(90deg,transparent 20%,#0627b322 35%,#061eaa66 100%);z-index:-2}
+ #zwlx-clean-loop #zf-settings,#zwlx-clean-loop #zf-other{left:36%;right:4%;top:5%}
+ #zwlx-clean-loop .scene[data-view=downloads] #zf-other{top:5%}
+ #zwlx-clean-loop .player{left:36%;right:4%;bottom:4%}
+ #zwlx-clean-loop .menu-screen{left:48%;top:18%;width:48%}
+ #zwlx-clean-loop .scene[data-view=main] .player{left:48%;right:5%}
+ #zwlx-clean-loop .main-choice{font-size:clamp(35px,calc(5*var(--u)),48px)}
+ #zwlx-clean-loop .scene[data-view=main] .song-title{font-size:clamp(26px,calc(3.8*var(--u)),36px)}
+ #zwlx-clean-loop .library-tools{flex-wrap:wrap;gap:2px}
+ #zwlx-clean-loop .library-tabs{gap:10px}
+ #zwlx-clean-loop .tab{font-size:14px}
+ #zwlx-clean-loop .tabs{gap:8px;justify-content:flex-start}
+ #zwlx-clean-loop .album-grid{grid-template-columns:1fr}
+ #zwlx-clean-loop .copy small{font-size:10px}
+ #zwlx-clean-loop .copy strong,#zwlx-clean-loop .copy label{font-size:12px}
+ #zwlx-clean-loop .row-icon{display:none}
+ #zwlx-clean-loop .saved{font-size:9px}
+ #zwlx-clean-loop .trackrow{gap:6px}
+}
+@media(max-height:620px){
+ #zwlx-clean-loop .heading{margin-bottom:8px}
+ #zwlx-clean-loop .row{min-height:35px;padding:6px 0}
+ #zwlx-clean-loop .group-label{padding-top:6px}
+ #zwlx-clean-loop .menu-screen{top:14%}
+ #zwlx-clean-loop .scene[data-view=main] .player{bottom:4%!important}
+}
+/* Leave a clear gap above the player without moving the main menu buttons. */
+#zwlx-clean-loop .scene[data-view=main] .player-body{margin-top:calc(.8*var(--u))}
+#zwlx-clean-loop .scene[data-view=main] .controls{margin-top:calc(1.4*var(--u))}
+#zwlx-clean-loop .scene[data-view=main] .timeline{margin-top:var(--u)}
+#zwlx-clean-loop .scene[data-view=main] .volume-row{margin-top:calc(.9*var(--u))}
+/* One continuous video extends behind the transparent draggable title bar. */
+#zwlx-clean-loop .titlebar{background:transparent;box-shadow:none}
+#zwlx-clean-loop .titlebar .title{color:#073b72}
+#zwlx-clean-loop .scene{overflow:visible}
+#zwlx-clean-loop .plate{top:-37px!important;height:calc(100% + 37px)!important}
+#zwlx-clean-loop .scene:after{top:-37px}
+
+#zwlx-clean-loop .approved-date-hud{position:absolute;left:2.8%;top:4%;width:23%;min-width:180px;max-width:340px;aspect-ratio:4.625;z-index:5;pointer-events:none;transform:rotate(-7deg);transform-origin:left center}
+#zwlx-clean-loop .approved-date-hud canvas,#zwlx-clean-loop .approved-date-hud svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+#zwlx-clean-loop .approved-date-hud svg{overflow:visible}
+@media(max-width:900px){#zwlx-clean-loop .approved-date-hud{min-width:0;width:30%;top:5%}}
+
+#zwlx-clean-loop .live-weekday text{font-family:Arial,sans-serif;font-weight:900;font-size:217px;fill:#10227b}

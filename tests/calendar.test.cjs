@@ -1,0 +1,3 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),calendar=require('../src/calendar-model.js');
+test('night switches at 5 PM and finishes exactly at 3 AM',()=>{for(const [hour,minute,night] of [[16,59,false],[17,0,true],[23,59,true],[0,0,true],[2,59,true],[3,0,false]])assert.equal(calendar(new Date(2026,10,8,hour,minute)).night,night);});
+test('weekend is Thursday Friday and Saturday and date updates at midnight',()=>{for(let day=1;day<=7;day++){const d=new Date(2026,10,day,12);assert.equal(calendar(d).weekend,[4,5,6].includes(d.getDay()));}assert.equal(calendar(new Date(2026,10,9,0)).date,'11/9');});
