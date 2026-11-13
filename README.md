@@ -1,6 +1,6 @@
 # Blue Hour
 
-A Persona 3 Reload–inspired local music player for Apple silicon Macs.
+A Persona 3 Reload–inspired local audio player for Apple silicon Macs.
 
 ![Blue Hour main screen](screenshots/player.gif)
 
