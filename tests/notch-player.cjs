@@ -34,6 +34,14 @@ const { execFileSync } = require('node:child_process');
     });
     await main.getByRole('button', { name: 'Play', exact: true }).first().click();
     await main.waitForFunction(() => document.querySelector('[data-player=play]')?.getAttribute('aria-label') === 'Pause');
+    await app.evaluate(({ BrowserWindow }) => {
+      const window = BrowserWindow.getAllWindows().find(w => w.webContents.getURL().endsWith('/index.html'));
+      window.blur();
+      window.emit('blur');
+    });
+    await main.waitForTimeout(250);
+    assert.equal(app.windows().some(page => page.url().endsWith('/notch.html')), false,
+      'Switching focus away from the open window keeps the notch hidden');
     await main.getByRole('button', { name: 'Minimize', exact: true }).click();
     const findPanel = () => app.windows().find(page => page.url().endsWith('/notch.html'));
     const deadline = Date.now() + 8000;
